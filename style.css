@@ -1,0 +1,74 @@
+body{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(153, 45, 45);
+    background-color: rgb(34, 34, 34);
+    text-align: center;
+}
+
+h1{
+    font-size: 80px;
+    background-color: black;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+#back{
+    font-size: 30px;
+    margin-top: 0px;
+    transition: 0.3s;
+}
+
+#back:hover{
+    color: blueviolet;
+}
+
+#sub{
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+#middle{
+    width: 1000px;
+    margin: auto;
+}
+
+.icon{
+    background-color: black;
+    height: 180px;
+    width: 200px;
+    margin: 20px;
+    display:inline-block;
+}
+
+.icon img{
+    border: 2px solid rgb(153, 45, 45);
+    height:120px;
+    width: 120px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+.icon img:hover{
+    filter:hue-rotate(20);
+}
+
+.icon p{
+    margin-top: 0px;
+    transition: 0.3s;
+}
+.icon p:hover{
+    color: blueviolet;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(153, 45, 45) ;
+}
+
+.main{
+    height: 800px;
+    width: 1100px;
+    background-color: black;
+    margin: auto;
+    margin-bottom: 50px;
+}
