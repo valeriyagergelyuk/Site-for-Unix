@@ -38,6 +38,7 @@ h1{
     width: 200px;
     margin: 20px;
     display:inline-block;
+    
 }
 
 .icon img{
@@ -45,7 +46,8 @@ h1{
     height:120px;
     width: 120px;
     margin-top: 20px;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
+    object-fit: cover;
 }
 
 .icon img:hover{
