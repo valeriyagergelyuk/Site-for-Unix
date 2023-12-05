@@ -2,11 +2,14 @@
 <html>
     <header>
         <link rel="stylesheet" href="style.css">
+        <!-- <script src="script.js"></script> -->
         <title>Board | Play Games</title>
     </header>
     <body>
         <main>
             <h1>BOARD</h1>
+            <h2>Amount of Visits to our Site: <p id = "visits"> </p></h2>
+            
             <p id="sub">Top games</p>
 
             <div id="middle"> 
@@ -34,4 +37,18 @@
             </div>
         </main>
     </body>
+    <script>
+        var visitsCounter = parseInt(localStorage.getItem("visits"));
+
+        window.onload = function (){
+        
+           visitsCounter = visitsCounter + 1;
+           localStorage.setItem('visits', visitsCounter);
+         
+              
+            visitsCounter = localStorage.getItem('visits');
+            document.getElementById('visits').innerHTML = visitsCounter ;    
+        }
+
+    </script>
 </html>
