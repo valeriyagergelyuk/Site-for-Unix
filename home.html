@@ -41,14 +41,11 @@
         var visitsCounter = parseInt(localStorage.getItem("visits"));
 
         window.onload = function (){
-        
-           visitsCounter = visitsCounter + 1;
-           localStorage.setItem('visits', visitsCounter);
+            visitsCounter = visitsCounter + 1;
+            localStorage.setItem('visits', visitsCounter);
          
-              
             visitsCounter = localStorage.getItem('visits');
             document.getElementById('visits').innerHTML = visitsCounter ;    
         }
-
     </script>
 </html>
