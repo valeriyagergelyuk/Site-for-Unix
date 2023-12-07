@@ -1,0 +1,7 @@
+chmod +x change_color.sh
+chmod +x change_color.js
+
+crontab -e
+
+//Example crontab entry to change background color every 5 minutes
+*/5 * * * * /path/to/change_color.sh
