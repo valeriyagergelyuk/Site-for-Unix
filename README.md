@@ -6,13 +6,13 @@ The website shows the number of visits that you've made to it, and this number i
 
 ## Basic System Setup and Security
 Some security measures that we have implemented into our project include : 
-    Changing the default ssh port (22)
-    Changing the default http port (80) - > since both of these opens the server up to being targeted by hackers
-    Implemented SSH - key based authentication
+    - Changing the default ssh port (22)
+    - Changing the default http port (80) - > since both of these opens the server up to being targeted by hackers
+    - Implemented SSH - key based authentication
 
 ## Service Management / Scheduling
-    A service (scheduled task): check every minute if changes have been made to the git repository and pull them. 
-    Service that rotates the order of the games every hour, making the homepage different by showing different games. 
+    - A service (scheduled task): check every minute if changes have been made to the git repository and pull them. 
+    - Service that rotates the order of the games every hour, making the homepage different by showing different games. 
 
 
 
