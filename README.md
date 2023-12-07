@@ -17,7 +17,7 @@ Our Plan was to:
 The Result: 
 * Changed the background color of the website at a certain time interval. 
 
-### Automated Task
+### Automated Task using a Scripting Language
 Our plan was to:
 * Count the number of total visits to our website
 
