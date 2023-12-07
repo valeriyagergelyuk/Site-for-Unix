@@ -6,7 +6,7 @@ The website shows the number of visits that you've made to it, and this number i
 
 ### Basic System Setup and Security
 Some security measures that we have implemented into our project include : 
-* Changed the default http port (80) - > since both of these opens the server up to being targeted by hackers
+* Changed the default http port (80) - > since this opens the server up to being targeted by hackers
 * Implemented SSH - key based authentication
 
 ### Service Management / Scheduling
