@@ -2,7 +2,6 @@
 <html>
     <header>
         <link rel="stylesheet" href="style.css">
-        <!--<script src="WebSessionCounter.js"></script> -->
         <title>Board | Play Games</title>
     </header>
     <body>
@@ -38,29 +37,9 @@
         </main>
     </body>
     <script>
-        // var visitsCounter = parseInt(localStorage.getItem("visits"));
-        
-        // window.onload = function (){
-        //     visitsCounter = visitsCounter + 1;
-        //     localStorage.setItem('visits', visitsCounter);
-         
-        //     visitsCounter = localStorage.getItem('visits');
-        //     document.getElementById('visits').innerHTML = visitsCounter ;    
-        // }
-        ////
-        // var visitsCounter = parseInt(localStorage.getItem("visits")) + parseInt(0);
-       
-        // window.onload = function (){
-        //     visitsCounter = visitsCounter + 1;
-        //     localStorage.setItem('visits', visitsCounter);
-         
-        //     visitsCounter = localStorage.getItem('visits');
-        //     document.getElementById('visits').innerHTML = visitsCounter ;    
-        // }
 
-        // Function to fetch and update the count from cookies
         function updatePageVisitsCount() {
-            // Check if 'loadCount' cookie exists
+            // Check if the cookie exists
             var countCookie = document.cookie.replace(/(?:(?:^|.*;\s*)loadCount\s*=\s*([^;]*).*$)|^.*$/, "$1");
             
             // Parse the count from the cookie
@@ -69,14 +48,13 @@
             // Increment the count
             count++;
 
-            // Set the 'loadCount' cookie with the new count (expires in 365 days)
+            // Set the cookie with the new count (expires in 365 days)
             document.cookie = 'loadCount=' + count + '; max-age=' + (365 * 24 * 60 * 60);
 
             // Display the count on the webpage
             document.getElementById('visits').innerText = count;
         }
 
-        // Call the updateLoadCount function when the page loads
          updatePageVisitsCount();
     </script>
 </html>
