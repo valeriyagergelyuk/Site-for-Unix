@@ -1,1 +1,34 @@
+This file will explain how to reproduce the project. 
+
+1. Create a website using html. Any website would work, no matter the contents. In this case, we used the website found in the "Website" folder of the repository.
+   Make sure to put the following javascript code in your website to increment a counter on the machine you are using by utilizing cookies: 
+        function updatePageVisitsCount() {
+            // Check if the cookie exists
+            var countCookie = document.cookie.replace(/(?:(?:^|.*;\s*)loadCount\s*=\s*([^;]*).*$)|^.*$/, "$1");
+            
+            // Parse the count from the cookie
+            var count = parseInt(countCookie) || 0;
+
+            // Increment the count
+            count++;
+
+            // Set the cookie with the new count (expires in 365 days)
+            document.cookie = 'loadCount=' + count + '; max-age=' + (365 * 24 * 60 * 60);
+
+            // Display the count on the webpage
+            document.getElementById('visits').innerText = count;
+        }
+
+
+2. Place the website into a git repository, to do this: 
+    - Go on your preferred website (in this case, GitHub). 
+    - Create an account or log in. 
+    - Create a repository and give it the name you want (in our case, it is Site-for_Unix).
+    - Create any file on your destop. 
+    - Open your terminal and change your directory to the name of the new folder (cd [folder]).
+    - Copy the link of the repository. In your terminal, type "git clone [link of the repository]". This will clone the repository in the folder and will create a new folder inside. 
+    - Once the new folder is created after the cloning, type "cd [new_folder]" in the terminal.
+    - Copy the folder of your website into the cloned folder. 
+    - In the terminal, type "git add .". Next, type "git commit -m "added website". When everything has been committed, type "git push" in your terminal to push all the changes to the directory. 
+
 
