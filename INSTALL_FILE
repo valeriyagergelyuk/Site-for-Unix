@@ -32,3 +32,23 @@ This file will explain how to reproduce the project.
     - In the terminal, type "git add .". Next, type "git commit -m "added website". When everything has been committed, type "git push" in your terminal to push all the changes to the directory. 
 
 
+3. Create a DigitalOcean account or Log into your account. This is the website for DigitalOcean: https://www.digitalocean.com/
+   - Choose to use email, gmail, or link your github account.
+   - You will be required to enter payment information. Please make sure this information is accurate, since DigitalOcean will block your account if you input the wrong information. 
+
+
+4. Create you SSH Key
+   - Open the terminal on your Linux based machine. 
+   - Enter the command ssh-keygen. The terminal will show you the default recommended location to store your ssh key (/.ssh/id_rsa). You can however save it in another file if you wish to do so. 
+   - 
+
+
+5. Create a new vps (Droplet)
+   - When you have successfully accessed your account, press on the "Drolplets" button located on the left hand side of the screen, on the menu.
+   - Click on "Create Droplet". This will bring you to another page. 
+   - Select your region according to which is closest to you. 
+   - You will then be shown options for images. For our project, we chose the Debian image.
+   - You will be shown options for the size. For this project, we picked the Basic Shared CPU option for around 6.00$/month, as well as a Regular SSD. 
+   - When choosing an authentication method, pick SSH Key. This ensures maximum security for your server and allows only certain machines to access the vps.
+   - Click 
+
