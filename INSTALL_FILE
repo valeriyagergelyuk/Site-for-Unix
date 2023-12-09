@@ -40,7 +40,7 @@ This file will explain how to reproduce the project.
 4. Create you SSH Key
    - Open the terminal on your Linux based machine. 
    - Enter the command ssh-keygen. The terminal will show you the default recommended location to store your ssh key (/.ssh/id_rsa). You can however save it in another file if you wish to do so. 
-   - 
+   - Retrieve the contents of your ssh key by typing the following command: cat ~/.ssh/id_rsa.pub (if you changed the path in the previous step, type the command cat yourPath.pub).
 
 
 5. Create a new vps (Droplet)
@@ -50,5 +50,56 @@ This file will explain how to reproduce the project.
    - You will then be shown options for images. For our project, we chose the Debian image.
    - You will be shown options for the size. For this project, we picked the Basic Shared CPU option for around 6.00$/month, as well as a Regular SSD. 
    - When choosing an authentication method, pick SSH Key. This ensures maximum security for your server and allows only certain machines to access the vps.
-   - Click 
+   - Retrieve the contents of your machine's ssh key by typing the following command: cat ~/.ssh/id_rsa.pub (or cat yourPath.pub).
+   - Copy paste your key in the designated spot that pops up to DigitalOcean when you click to add a new key. Repeat the same step for all team memebers.
+   - Click "Create Droplet" to create your droplet. 
 
+
+6. Change the default port of the server: we decided to change the default port of 22 to 8089
+   - To do this using your own machine through ssh, you have to take note of the ip address of the machine, which is marked on the main page of your droplet. 
+     When you access by ssh, you have to make sure that the user you are logging in as is part of sudo group.
+   - The main page of the droplet also offers a Console, in which you are immediately logged in as root. 
+   - In any console/terminal, open the ssh configuration file. It can be done using any text editor, but in this case we use the following command using nano: nano /etc/nginx/sites-enabled/default.
+   - When the text editor opens, change the port number to 8089 and save the file.
+
+
+7. Deploying the website using the App feature
+   - Select “App” under the “Manage” menu on the left side of the screen of your digital ocean account. Click on “Create App”.
+   - You will be asked to select a source code for your app. You can either choose the git repository with your own website, or this one with our website. 
+   - Select GitHub and click on “Manage Access” and you will be asked to choose your repository. 
+   - You will be asked to authorize Digital Ocean to access your repository, give them the requested authorization.
+   - You will be asked to name your app, please note that the app name is not the same as the domain name, you must pay a fee to change the url of your website once it has been deployed. 
+   - Another option that is provided with apps is the auto deployment of any code changes, this means that any pushes made to the repository will be automatically pulled and will take effect on your website. Enable this function.
+   - Click next. It will confirm the creation of your app. 
+
+
+8. Scheduled process / service management: the following files could not be added to our project because our website got deployed as an App. However, ideally, if we had deployed the website on the droplet directly, 
+   these scripts would have worked. All these foles are found in this repository under the folder UnixScript.
+   - Create a javascript file (ChangeColor.js) with the follwing code: 
+         function changeColor() {
+         
+             var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+         
+             document.body.style.backgroundColor = randomColor;
+           }
+           
+           changeColor();
+     This code is to randomize the background color of the website.
+   - Create a .sh file (change_color.sh) with the following commands: 
+         #!/bin/bash
+         
+         # Navigate to the directory containing your HTML file
+         cd /var/www/html/index.html
+         
+         # Execute a JavaScript file to change the background color
+         node ChangeColor.js
+     This script executes the javascript file that was previosuly created. 
+   - The following commands have not been entered but we have registered them. They should technically be entered into the terminal or the console. 
+         chmod +x change_color.sh
+         chmod +x ChangeColor.js
+         
+         crontab -e
+         
+         //Example crontab entry to change background color every 5 minutes
+         */5 * * * * /path/to/change_color.sh
+     These commands change the permissions of the files, then executes the file every five minutes using crontab. 
