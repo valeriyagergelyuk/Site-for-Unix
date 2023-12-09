@@ -1,5 +1,5 @@
 chmod +x change_color.sh
-chmod +x change_color.js
+chmod +x ChangeColor.js
 
 crontab -e
 
